@@ -1,4 +1,5 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
 
 const contactsInitialState = [
     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },

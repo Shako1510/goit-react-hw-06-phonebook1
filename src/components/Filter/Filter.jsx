@@ -1,7 +1,26 @@
 import { LabelBox, InputBox, FindBox } from "./FilterStyled";
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from "react-redux";
+import { setFilter } from "redux/filterSlice";
+import { getFilter } from "redux/selectors";
 
-const Filter = ({ filterValue, onChange }) => {
+
+
+
+const Filter = () => {
+
+
+    const filter = useSelector(getFilter)
+    const dispatch = useDispatch();
+
+    const serchingFilter = (e) => {
+        const value = e.currentTarget.value;
+
+        dispatch(setFilter(value));
+
+    };
+
+
     return (
         <FindBox>
             <LabelBox> Find contacts by name </LabelBox>
@@ -12,8 +31,8 @@ const Filter = ({ filterValue, onChange }) => {
 
                 type="text"
                 name="filter"
-                value={filterValue}
-                onChange={onChange} />
+                value={filter}
+                onChange={serchingFilter} />
 
         </FindBox >
 
