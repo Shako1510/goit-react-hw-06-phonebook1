@@ -10,7 +10,7 @@ import { getFilter } from "redux/selectors";
 const Filter = () => {
 
 
-    const filter = useSelector(getFilter)
+    const filter = useSelector(getFilter);
     const dispatch = useDispatch();
 
     const serchingFilter = (e) => {
